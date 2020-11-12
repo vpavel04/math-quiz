@@ -217,7 +217,7 @@ function DoPercentage5() {
   const int3 = int1 * 100 / int2;
 
   return {
-    question: `Cat e cresterea procentuala de la ${int3} la ${int3 * (1 + int2 * multiplier / 100)}`,
+    question: `Cat e cresterea procentuala de la ${int3} la ${int3 + int3 * int2 * multiplier / 100}`,
     answer: int2 * multiplier + "%"
   }
 }
@@ -230,7 +230,7 @@ function DoPercentage6() {
 
   return {
     question: `${int3} dupa o crestere de  ${int2 * multiplier}% este`,
-    answer: int3 * (1 + int2 * multiplier / 100)
+    answer: int3 + int3 * int2 * multiplier / 100
   }
 }
 
