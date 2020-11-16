@@ -209,16 +209,23 @@ function DoPercentage4() {
     answer: (percentage * 100) + "%"
   }
 }
-
-function DoPercentage5() {
+function GenerateGrowth() {
   const int1 = chooseInt(maximum, minimum, true);
   const int2 = chooseOne(getDivisors(100));
   const multiplier = chooseInt(1, 5);
   const int3 = int1 * 100 / int2;
+  return {
+    from: int3,
+    to: int3 + int3 * int2 * multiplier / 100,
+    p: int2 * multiplier
+  }
+}
+function DoPercentage5() {
+  const res = GenerateGrowth();
 
   return {
-    question: `Cat e cresterea procentuala de la ${int3} la ${int3 + int3 * int2 * multiplier / 100}`,
-    answer: int2 * multiplier + "%"
+    question: `Cat e cresterea procentuala de la ${res.from} la ${res.to}`,
+    answer: res.p + "%"
   }
 }
 
@@ -231,6 +238,15 @@ function DoPercentage6() {
   return {
     question: `${int3} dupa o crestere de  ${int2 * multiplier}% este`,
     answer: int3 + int3 * int2 * multiplier / 100
+  }
+}
+
+function DoProfitMargin() {
+  const res = GenerateGrowth();
+
+  return {
+    question: `Cat e profitul % pentru un bussiness care incaseaza ${res.to}$ si cheltuie ${res.from}$`,
+    answer: res.p + "%"
   }
 }
 
@@ -249,7 +265,8 @@ const operations = [
   DoPercentage4,
   DoPercentage5,
   DoPercentage6,
-  DoMoveCommaByTens
+  DoMoveCommaByTens,
+  DoProfitMargin
 ];
 
 $(".custom-control-input").change(function () {
@@ -289,6 +306,12 @@ $(".custom-control-input").change(function () {
     updateStateFn("#customSwitch12", state);
     updateStateFn("#customSwitch13", state);
     updateStateFn("#customSwitch14", state);
+  }
+
+  if (thisCtrl.attr('id') == "bussiness") {
+
+    const state = thisCtrl.attr("state");
+    updateStateFn("#customSwitch16", state);
   }
 });
 
