@@ -14,7 +14,9 @@ const operations = [
   DoPercentage5,
   DoPercentage6,
   DoMoveCommaByTens,
-  DoProfitMargin
+  DoProfitMargin,
+  DoPercentage7,
+  DoPercentage8
 ];
 
 $(".custom-control-input").change(function () {
@@ -54,6 +56,8 @@ $(".custom-control-input").change(function () {
     updateStateFn("#customSwitch12", state);
     updateStateFn("#customSwitch13", state);
     updateStateFn("#customSwitch14", state);
+    updateStateFn("#customSwitch17", state);
+    updateStateFn("#customSwitch18", state);
   }
 
   if (thisCtrl.attr('id') == "bussiness") {

@@ -220,6 +220,19 @@ function GenerateGrowth() {
     p: int2 * multiplier
   }
 }
+
+function GenerateDecrease() {
+  const int1 = chooseInt(maximum, minimum, true);
+  const int2 = chooseOne(getDivisors(100));
+  const multiplier = int2 < 20 ? chooseInt(1, 5) : 1;
+  const int3 = int1 * 100 / int2;
+  return {
+    from: int3,
+    to: int3 - int3 * int2 * multiplier / 100,
+    p: int2 * multiplier
+  }
+}
+
 function DoPercentage5() {
   const res = GenerateGrowth();
 
@@ -238,6 +251,27 @@ function DoPercentage6() {
   return {
     question: `${int3} dupa o crestere de  ${int2 * multiplier}% este`,
     answer: int3 + int3 * int2 * multiplier / 100
+  }
+}
+
+function DoPercentage7() {
+  const res = GenerateDecrease();
+
+  return {
+    question: `Cat e reducerea % de la ${res.from} la ${res.to}`,
+    answer: res.p + "%"
+  }
+}
+
+function DoPercentage8() {
+  const int1 = chooseInt(maximum, minimum, true);
+  const int2 = chooseOne(getDivisors(100));
+  const multiplier = int2 < 20 ? chooseInt(1, 5) : 1;
+  const int3 = int1 * 100 / int2;
+
+  return {
+    question: `${int3} dupa o reducere  de  ${int2 * multiplier}% este`,
+    answer: int3 - int3 * int2 * multiplier / 100
   }
 }
 
