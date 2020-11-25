@@ -187,6 +187,7 @@ const equations = {
     equation1: (opts) => {
       const percentages = [25];
       for (let i = 0; i <= 10; i++) {
+        percentages.push(i);
         percentages.push( i * 10);
       }
 
@@ -218,22 +219,6 @@ const equations = {
       return {
         question: `${int2}% * ? = ${int1}`,
         answer: int3
-      }
-    },
-
-    equation4: (opts) => {
-      const percentages = [0.25];
-      for (let i = 0; i <= 10; i++) {
-        percentages.push(i);
-        percentages.push(i*10);
-      }
-
-      const percentage = chooseOne(percentages);
-      const int1 = chooseInt(10 * opts.min, 10 * opts.max, true);
-
-      return {
-        question: `Cat reprezinta ${int1 * percentage / 100} din ${int1}, in procente?`,
-        answer: percentage + "%"
       }
     },
 
