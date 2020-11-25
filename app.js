@@ -1,110 +1,82 @@
-const operations = [
-  DoSum,
-  DoSub,
-  DoMult,
-  DoDiv,
-  DoTreeNumberOp,
-  DoFourNumberOp,
-  DoPercentage1,
-  DoPercentageConversion1,
-  DoPercentageConversion2,
-  DoPercentage2,
-  DoPercentage3,
-  DoPercentage4,
-  DoPercentage5,
-  DoPercentage6,
-  DoMoveCommaByTens,
-  DoProfitMargin,
-  DoPercentage7,
-  DoPercentage8
-];
 
-$(".custom-control-input").change(function () {
-  const thisCtrl = $(this);
+function getActiveEquations() {
+  const ret = [];
 
-  if (thisCtrl.attr("state") == "true")
-    thisCtrl.attr("state", "false");
-  else
-    thisCtrl.attr("state", "true");
+  $(".custom-control-input").each(function (index, elem) {
+    const $elem = $(elem);
+    if (!isCategory($elem) && $elem.attr("state") == "true") {
+      ret.push($elem.attr('id'));
+    }
+  });
 
-  const updateStateFn = (id, state) => {
-    $(id).attr("state", state);
-    $(id).prop("disabled", state == "false");
-    $(id).prop("checked", state == "true")
+  return ret;
+}
+
+function handleSwitchChange() {
+  const $this = $(this);
+  const id = $this.attr("id");
+
+  const oldState = $this.attr("state");
+  const newState = oldState == "true" ? "false" : "true";
+  $this.attr("state", newState);
+
+  if (isCategory($this)) {
+
+    // set the same state to all subgroups
+    $(".custom-control-input").each(function (index, elem) {
+      const $elem = $(elem);
+      const elemId = $elem.attr("id");
+
+      if (elemId == id)
+        return;
+
+      if (elemId.startsWith(id)) {
+        $elem.attr("state", newState);
+        $elem.prop("disabled", newState == "false");
+        $elem.prop("checked", newState == "true");
+      }
+    });
+  }
+};
+
+function isCategory($elem) {
+  return !$elem.attr('id').includes('.');
+};
+
+function setupNewQuestion() {
+  const opts = {
+    min: parseInt($("#min").val()),
+    max: parseInt($("#max").val())
   };
 
-  if (thisCtrl.attr('id') == "basics") {
+  const eqIdentifier = chooseOne(getActiveEquations()).split('.');
+  const eqCategory = equations[eqIdentifier[0]];
+  const eq = eqCategory[eqIdentifier[1]];
 
-    const state = thisCtrl.attr("state");
-    updateStateFn("#customSwitch1", state);
-    updateStateFn("#customSwitch2", state);
-    updateStateFn("#customSwitch3", state);
-    updateStateFn("#customSwitch4", state);
-    updateStateFn("#customSwitch5", state);
-    updateStateFn("#customSwitch6", state);
-    updateStateFn("#customSwitch15", state);
-  }
+  window.currentEq = eq(opts);
 
-  if (thisCtrl.attr('id') == "percentages") {
-
-    const state = thisCtrl.attr("state");
-    updateStateFn("#customSwitch7", state);
-    updateStateFn("#customSwitch8", state);
-    updateStateFn("#customSwitch9", state);
-    updateStateFn("#customSwitch10", state);
-    updateStateFn("#customSwitch11", state);
-    updateStateFn("#customSwitch12", state);
-    updateStateFn("#customSwitch13", state);
-    updateStateFn("#customSwitch14", state);
-    updateStateFn("#customSwitch17", state);
-    updateStateFn("#customSwitch18", state);
-  }
-
-  if (thisCtrl.attr('id') == "bussiness") {
-
-    const state = thisCtrl.attr("state");
-    updateStateFn("#customSwitch16", state);
-  }
-});
-
-function operationIsActive(opCode) {
-  return $(`#customSwitch${opCode + 1}`).attr("state") == "true";
+  $("#question").html(window.currentEq.question);
 }
 
-function getActiveOperations() {
-  const activeOps = [];
-  for (let i = 0; i < operations.length; i++) {
-    if (operationIsActive(i))
-      activeOps.push(i);
-  }
+function initApp() {
+  setupNewQuestion();
 
-  return activeOps;
+  $(".custom-control-input").change(handleSwitchChange);
+
+  $("#answer").keyup(function () {
+    const answer = $("#answer").val();
+    if (answer == "!" || answer == window.currentEq.answer) {
+      $("#answer").val("");
+      setupNewQuestion();
+    }
+  });
+  
+  $("#get-excel-exercise-btn").click(() => {
+    buildExcelExercise1();
+  });
+
+  $("#next-question-btn").click(() => {
+    setupNewQuestion();
+  });
+
 }
-
-let currentQestion = null;
-function moveNext() {
-
-  minimum = parseInt($("#min").val());
-  maximum = parseInt($("#max").val());
-
-  const activeOps = getActiveOperations();
-  const choosedOp = Math.floor(Math.random() * activeOps.length);
-  currentQestion = operations[activeOps[choosedOp]]();
-  $("#question").html(currentQestion.question);
-}
-
-
-$("#answer").keyup(function () {
-
-  const answer = $("#answer").val();
-  if (answer == "!" || answer == currentQestion.answer) {
-    $("#answer").val("");
-    moveNext();
-  }
-});
-
-$("#get-excel-exercise-btn").click(() => {
-  buildExcelExercise1();
-});
-
-moveNext();

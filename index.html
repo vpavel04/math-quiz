@@ -22,18 +22,21 @@
     <div class="panel-group">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" href="#collapse1" aria-expanded="true">Hide options</a>
-          </h4>
+          <div>
+            <button class="btn btn-outline-primary panel-title" data-toggle="collapse" href="#collapse1"
+              aria-expanded="false"><i class="fa fa-cogs"></i> Options</button>
+            <button class="btn btn-outline-primary" id="get-excel-exercise-btn"><i class="fa fa-download"></i> Generate
+              Excel
+              Exercise 1</button>
+          </div>
         </div>
-        <div id="collapse1" class="panel-collapse collapse show">
+        <div id="collapse1" class="panel-collapse collapse">
           <div class="panel-body">
             <table class="table table-condensed ">
               <thead>
                 <tr>
                   <th style="width:10%">Category</th>
-                  <th style="width:40%">Easy</th>
-                  <th style="width:45%">Hard</th>
+                  <th style="width:90%">Question</th>
                 </tr>
               </thead>
               <tbody>
@@ -46,34 +49,38 @@
                   </td>
                   <td>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch1">
-                      <label class="custom-control-label" for="customSwitch1">a+b</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="basics.sum">
+                      <label class="custom-control-label" for="basics.sum">Cat este <code>a</code> + <code>b</code>?</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch2">
-                      <label class="custom-control-label" for="customSwitch2">a-b</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="basics.sub">
+                      <label class="custom-control-label" for="basics.sub">Cat este <code>a</code> - <code>b</code>?</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch3">
-                      <label class="custom-control-label" for="customSwitch3">a*b</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="basics.mult">
+                      <label class="custom-control-label" for="basics.mult">Cat este <code>a</code> * <code>b</code>?</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch4">
-                      <label class="custom-control-label" for="customSwitch4">a/b</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="basics.div">
+                      <label class="custom-control-label" for="basics.div">Cat este <code>a</code> / <code>b</code>?</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch5">
-                      <label class="custom-control-label" for="customSwitch5">a_b_c</label>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch6">
-                      <label class="custom-control-label" for="customSwitch6">a_b_c_d</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="basics.treeNumbersEq">
+                      <label class="custom-control-label" for="basics.treeNumbersEq">Cat este <code>a</code> &#9633; <code>b</code> &#9633;
+                        <code>c</code>? Unde &#9633; poate fi +, -, * sau /</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch15">
-                      <label class="custom-control-label" for="customSwitch15">a/1000</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="basics.fourNumbersEq">
+                      <label class="custom-control-label" for="basics.fourNumbersEq">Cat este <code>a</code> &#9633; <code>b</code> &#9633;
+                        <code>c</code> &#9633; <code>d</code>? Unde &#9633; poate fi +, -, * sau /</label>
+                    </div>
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="basics.multiplyOrDivideByTen">
+                      <label class="custom-control-label" for="basics.multiplyOrDivideByTen">Inmultiri sau impartiri cu
+                        10, 100 sau 1000</label>
                     </div>
                   </td>
                 </tr>
@@ -86,46 +93,63 @@
                   </td>
                   <td>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch7">
-                      <label class="custom-control-label" for="customSwitch7">a from b = ?%</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="percentages.equation1">
+                      <label class="custom-control-label" for="percentages.equation1"> Cat este <code>a</code> din <code>b</code> in
+                        procente?</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch8">
-                      <label class="custom-control-label" for="customSwitch8">a in %</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="percentages.convertNumberToPercentage">
+                      <label class="custom-control-label" for="percentages.convertNumberToPercentage">Cat este <code>a</code> in
+                        procente?(easy)</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch9">
-                      <label class="custom-control-label" for="customSwitch9">a% in decimal</label>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch12">
-                      <label class="custom-control-label" for="customSwitch12">a from b = ?%</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="percentages.convertPercentageToNumber">
+                      <label class="custom-control-label" for="percentages.convertPercentageToNumber">Cat este <code>a%</code> in
+                        zecimal?</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch10">
-                      <label class="custom-control-label" for="customSwitch10">a% * b=?</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="percentages.equation4">
+                      <label class="custom-control-label" for="percentages.equation4">Cat este <code>a</code> din <code>b</code> in procente?
+                        (medium)</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch11">
-                      <label class="custom-control-label" for="customSwitch11">a% * ? = b</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="percentages.equation2">
+                      <label class="custom-control-label" for="percentages.equation2">Cat este <code>a%</code> din <code>b</code>?</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch13">
-                      <label class="custom-control-label" for="customSwitch13">growth in %</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="percentages.equation3">
+                      <label class="custom-control-label" for="percentages.equation3"><code>a%</code> din cat este egal cu
+                        <code>b</code>?</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch14">
-                      <label class="custom-control-label" for="customSwitch14">growth</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="percentages.equation5">
+                      <label class="custom-control-label" for="percentages.equation5">Cat este cresterea procentuala de
+                        la <code>a</code> la <code>b</code>?</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch17">
-                      <label class="custom-control-label" for="customSwitch17">-growth in %<</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="percentages.equation6">
+                      <label class="custom-control-label" for="percentages.equation6">Cat este <code>a</code> dupa un adaos de
+                        <code>b%</code>?</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch18">
-                      <label class="custom-control-label" for="customSwitch18">-growth<</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="percentages.equation7">
+                      <label class="custom-control-label" for="percentages.equation7">Cat este reducerea procentuala de
+                        la <code>a</code> la <code>b</code>? </label>
+                    </div>
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="percentages.equation8">
+                      <label class="custom-control-label" for="percentages.equation8">Cat este <code>a</code> dupa o reducere de
+                        <code>b%</code>? </label>
                     </div>
                   </td>
                 </tr>
@@ -138,11 +162,10 @@
                   </td>
                   <td>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="customSwitch16">
-                      <label class="custom-control-label" for="customSwitch16">profit margin</label>
+                      <input type="checkbox" checked="" state="true" class="custom-control-input"
+                        id="bussiness.profitMargin">
+                      <label class="custom-control-label" for="bussiness.profitMargin">Cat e adaosul comercial pentru un produs care are COGS-ul <code>X</code> RON si pretul de vanzare <code>Y</code> RON?</label>
                     </div>
-                  </td>
-                  <td>
                   </td>
                 </tr>
               </tbody>
@@ -165,7 +188,6 @@
             </div>
           </div>
         </div>
-        <button class="button" id="get-excel-exercise-btn"><i class="fa fa-download"></i> Generate Excel Exercise 1</button>
       </div>
     </div>
     <br>
@@ -175,10 +197,9 @@
     <br>
     <h2 id="question">test</h2>
     <div class="input-group mb-3">
-      <input type="text" name="answer" id="answer" class="form-control" 
-        aria-describedby="basic-addon2">
+      <input type="text" name="answer" id="answer" class="form-control" aria-describedby="basic-addon2">
       <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" onClick="moveNext()">Next</button>
+        <button class="btn btn-outline-primary" type="button" id="next-question-btn">Next</button>
       </div>
     </div>
   </div>
@@ -191,6 +212,7 @@
   <script src="./math.js"></script>
   <script src="./excel.js"></script>
   <script src="./app.js"></script>
+  <script> initApp(); </script>
 
 </body>
 
