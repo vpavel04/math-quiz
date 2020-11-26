@@ -221,6 +221,15 @@ const equations = {
         answer: int3
       }
     },
+    equation4: (opts) => {
+      const int1 = chooseInt(opts.min, opts.max, true) * chooseOne([1, 10]);
+      const int2 = chooseInt(opts.min, opts.max, true) * chooseOne([1, 10]);
+
+      return {
+        question: `Cat este ${int1}% din ${int2}% ?`,
+        answer: int1 * int2 / 100 + "%"
+      }
+    },
 
     equation5: (opts) => {
       const res = GenerateGrowth(opts);
