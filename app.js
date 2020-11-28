@@ -61,7 +61,7 @@ function setupNewQuestion() {
 function initPolyglot(language) {
   return new Promise((resolve, reject) => {
 
-    $.getJSON(`/i18n-${language}.json`)
+    $.getJSON(`./i18n-${language}.json`)
       .done((resources) => {
 
         const polyglot = new Polyglot();
