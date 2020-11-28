@@ -48,16 +48,16 @@
                     "description": "Cat este <code>x%</code> din <code>y</code>?"
                 },
                 "equation5": {
-                    "text": "Cat e cresterea procentuala de la %{x} la %{y}?",
-                    "description": "Cat e cresterea procentuala de la <code>x</code> la <code>y</code>?"
+                    "text": "Cat este cresterea procentuala de la %{x} la %{y}?",
+                    "description": "Cat este cresterea procentuala de la <code>x</code> la <code>y</code>?"
                 },
                 "equation6": {
                     "text": "Cat este %{x} dupa o crestere de  %{y}%?",
                     "description": "Cat este <code>x</code> dupa o crestere de  <code>y%</code>?"
                 },
                 "equation7": {
-                    "text": "Cat e reducerea % de la %{x} la %{y}?",
-                    "description": "Cat e reducerea % de la <code>x</code> la <code>y</code>?"
+                    "text": "Cat este reducerea % de la %{x} la %{y}?",
+                    "description": "Cat este reducerea % de la <code>x</code> la <code>y</code>?"
                 },
                 "equation8": {
                     "text": "Cat este %{x} dupa o reducere  de  %{y}%?",
@@ -66,8 +66,8 @@
             },
             "bussiness": {
                 "profitMargin": {
-                    "text": "Cat e adaosul comercial daca COGS = %{x} RON si Revenue = %{y} RON?",
-                    "description": "Cat e adaosul comercial daca COGS = <code>x</code>RON si Revenue = <code>y</code>RON?"
+                    "text": "Cat este adaosul comercial daca COGS = %{x} RON si Revenue = %{y} RON?",
+                    "description": "Cat este adaosul comercial daca COGS = <code>x</code>RON si Revenue = <code>y</code>RON?"
                 }
             }
         }
