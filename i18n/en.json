@@ -1,0 +1,75 @@
+{
+    "quiz": {
+        "math": {
+            "basics": {
+                "sum":{
+                    "description": "What is <code>x</code> + <code>y</code>?"
+                },
+                "sub":{
+                    "description": "What is <code>x</code> - <code>y</code>?"
+                },
+                "mult":{
+                    "description": "What is <code>x</code> * <code>y</code>?"
+                },
+                "div":{
+                    "description": "What is <code>x</code> / <code>y</code>?"
+                },
+                "treeNumbersEq":{
+                    "description": "What is <code>x</code> &#9633; <code>y</code> &#9633; <code>z</code>? Where &#9633; can be +, -, * sau /"
+                },
+                "fourNumbersEq":{
+                    "description": "What is <code>x</code> &#9633; <code>y</code> &#9633; <code>z</code> &#9633; <code>w</code>? Where &#9633; can be +, -, * sau /"
+                },
+                "multiplyOrDivideByTen":{
+                    "description": "Multyply or divide by 10, 100 sau 1000"
+                }
+            },
+            "percentages": {
+                "convertNumberToPercentage": {
+                    "text": "What is %{x} in percent?",
+                    "description": "What is <code>x</code> in percent?"
+                },
+                "convertPercentageToNumber": {
+                    "text": "What is %{x}% in decimal?",
+                    "description": "What is <code>x</code>in decimal?"
+                },
+                "equation1": {
+                    "text": "What is %{x} as a percent of %{y}?",
+                    "description": "What is <code>x</code> as a percent of <code>y</code>?"
+                },
+                "equation2": {
+                    "description": "What is <code>x%</code> of <code>y</code>?"
+                },
+                "equation3": {
+                    "description": "<code>x%</code> of what number is equal to <code>y</code>?"
+                },
+                "equation4": {
+                    "text": "What is %{x}% of %{y}?",
+                    "description": "What is <code>x%</code> of <code>y</code>?"
+                },
+                "equation5": {
+                    "text": "What is the percentage increase from %{x} to %{y}?",
+                    "description": "What is the percentage increase from <code>x</code> to <code>y</code>?"
+                },
+                "equation6": {
+                    "text": "What is %{x} after an increase of %{y}%?",
+                    "description": "What is <code>x</code> after an increase of <code>y%</code>?"
+                },
+                "equation7": {
+                    "text": "What is the percentage decrease from %{x} to %{y}?",
+                    "description": "What is the percentage decrease from <code>x</code> to <code>y</code>?"
+                },
+                "equation8": {
+                    "text": "What is %{x} after a decrease of %{y}%?",
+                    "description": "What is <code>x</code> after a decrease of <code>y%</code>?"
+                }
+            },
+            "bussiness": {
+                "profitMargin": {
+                    "text": "What is the markup if the COGS-ul is %{x}$ and the revenue is %{y}%?",
+                    "description": "What is the markup if the COGS-ul is <code>x$</code> and the revenue is <code>y$</code>?"
+                }
+            }
+        }
+    }
+}

@@ -11,8 +11,11 @@
   <title>Math Quiz</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
+  
 
 </head>
 
@@ -28,6 +31,10 @@
             <button class="btn btn-outline-primary" id="get-excel-exercise-btn"><i class="fa fa-download"></i> Generate
               Excel
               Exercise 1</button>
+            <select class="selectpicker float-right" data-width="fit" id="language-selector">
+              <option value="en" data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
+              <option value="ro" data-content='<span class="flag-icon flag-icon-ro"></span> Romana'>Romana</option>
+            </select>
           </div>
         </div>
         <div id="collapse1" class="panel-collapse collapse">
@@ -39,134 +46,8 @@
                   <th style="width:90%">Question</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="basics">
-                      <label class="custom-control-label" for="basics"></label>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="basics.sum">
-                      <label class="custom-control-label" for="basics.sum">Cat este <code>a</code> + <code>b</code>?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="basics.sub">
-                      <label class="custom-control-label" for="basics.sub">Cat este <code>a</code> - <code>b</code>?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="basics.mult">
-                      <label class="custom-control-label" for="basics.mult">Cat este <code>a</code> * <code>b</code>?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="basics.div">
-                      <label class="custom-control-label" for="basics.div">Cat este <code>a</code> / <code>b</code>?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="basics.treeNumbersEq">
-                      <label class="custom-control-label" for="basics.treeNumbersEq">Cat este <code>a</code> &#9633; <code>b</code> &#9633;
-                        <code>c</code>? Unde &#9633; poate fi +, -, * sau /</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="basics.fourNumbersEq">
-                      <label class="custom-control-label" for="basics.fourNumbersEq">Cat este <code>a</code> &#9633; <code>b</code> &#9633;
-                        <code>c</code> &#9633; <code>d</code>? Unde &#9633; poate fi +, -, * sau /</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="basics.multiplyOrDivideByTen">
-                      <label class="custom-control-label" for="basics.multiplyOrDivideByTen">Inmultiri sau impartiri cu
-                        10, 100 sau 1000</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="percentages">
-                      <label class="custom-control-label" for="percentages"></label>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="percentages.equation1">
-                      <label class="custom-control-label" for="percentages.equation1"> Cat este <code>a</code> din <code>b</code> in
-                        procente?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="percentages.convertNumberToPercentage">
-                      <label class="custom-control-label" for="percentages.convertNumberToPercentage">Cat este <code>a</code> in
-                        procente?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="percentages.convertPercentageToNumber">
-                      <label class="custom-control-label" for="percentages.convertPercentageToNumber">Cat este <code>a%</code> in
-                        zecimal?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="percentages.equation2">
-                      <label class="custom-control-label" for="percentages.equation2">Cat este <code>a%</code> din <code>b</code>?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="percentages.equation3">
-                      <label class="custom-control-label" for="percentages.equation3"><code>a%</code> din cat este egal cu
-                        <code>b</code>?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="percentages.equation4">
-                      <label class="custom-control-label" for="percentages.equation4">Cat este <code>a%</code> din <code>b%</code> in procente?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="percentages.equation5">
-                      <label class="custom-control-label" for="percentages.equation5">Cat este cresterea procentuala de
-                        la <code>a</code> la <code>b</code>?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="percentages.equation6">
-                      <label class="custom-control-label" for="percentages.equation6">Cat este <code>a</code> dupa un adaos de
-                        <code>b%</code>?</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="percentages.equation7">
-                      <label class="custom-control-label" for="percentages.equation7">Cat este reducerea procentuala de
-                        la <code>a</code> la <code>b</code>? </label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="percentages.equation8">
-                      <label class="custom-control-label" for="percentages.equation8">Cat este <code>a</code> dupa o reducere de
-                        <code>b%</code>? </label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input" id="bussiness">
-                      <label class="custom-control-label" for="bussiness"></label>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked="" state="true" class="custom-control-input"
-                        id="bussiness.profitMargin">
-                      <label class="custom-control-label" for="bussiness.profitMargin">Cat e adaosul comercial pentru un produs care are COGS-ul <code>X</code> RON si pretul de vanzare <code>Y</code> RON?</label>
-                    </div>
-                  </td>
-                </tr>
+              <tbody id="options-table-body">
+
               </tbody>
             </table>
             <div class="row">
@@ -205,9 +86,12 @@
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/polyglot.js/2.2.2/polyglot.min.js"></script>
+  <script src="./optionsGenerator.js"></script>
   <script src="./math.js"></script>
   <script src="./excel.js"></script>
   <script src="./app.js"></script>

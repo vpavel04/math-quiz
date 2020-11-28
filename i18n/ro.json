@@ -1,0 +1,75 @@
+{
+    "quiz": {
+        "math": {
+            "basics": {
+                "sum":{
+                    "description": "Cat este <code>x</code> + <code>y</code>?"
+                },
+                "sub":{
+                    "description": "Cat este <code>x</code> - <code>y</code>?"
+                },
+                "mult":{
+                    "description": "Cat este <code>x</code> * <code>y</code>?"
+                },
+                "div":{
+                    "description": "Cat este <code>x</code> / <code>y</code>?"
+                },
+                "treeNumbersEq":{
+                    "description": "Cat este <code>x</code> &#9633; <code>y</code> &#9633; <code>z</code>? Unde &#9633; poate fi +, -, * sau /"
+                },
+                "fourNumbersEq":{
+                    "description": "Cat este <code>x</code> &#9633; <code>y</code> &#9633; <code>z</code> &#9633; <code>w</code>? Unde &#9633; poate fi +, -, * sau /"
+                },
+                "multiplyOrDivideByTen":{
+                    "description": "nmultiri sau impartiri cu 10, 100 sau 1000"
+                }
+            },
+            "percentages": {
+                "convertNumberToPercentage": {
+                    "text": "Cat este %{x} in procente?",
+                    "description": "Cat este <code>x</code> in procente?"
+                },
+                "convertPercentageToNumber": {
+                    "text": "Cat este %{x}% in zecimal?",
+                    "description": "Cat este <code>x%</code> in zecimal?"
+                },
+                "equation1": {
+                    "text": "Cat reprezinta %{x} din %{y} in procente?",
+                    "description": "Cat reprezinta <code>x</code> din <code>y</code> in procente?"
+                },
+                "equation2": {
+                    "description": "Cat este <code>x%</code> din <code>y</code>?"
+                },
+                "equation3": {
+                    "description": "<code>x%</code> din cat este egal cu <code>y</code>?"
+                },
+                "equation4": {
+                    "text": "Cat este %{x}% din %{y}?",
+                    "description": "Cat este <code>x%</code> din <code>y</code>?"
+                },
+                "equation5": {
+                    "text": "Cat e cresterea procentuala de la %{x} la %{y}?",
+                    "description": "Cat e cresterea procentuala de la <code>x</code> la <code>y</code>?"
+                },
+                "equation6": {
+                    "text": "Cat este %{x} dupa o crestere de  %{y}%?",
+                    "description": "Cat este <code>x</code> dupa o crestere de  <code>y%</code>?"
+                },
+                "equation7": {
+                    "text": "Cat e reducerea % de la %{x} la %{y}?",
+                    "description": "Cat e reducerea % de la <code>x</code> la <code>y</code>?"
+                },
+                "equation8": {
+                    "text": "Cat este %{x} dupa o reducere  de  %{y}%?",
+                    "description": "Cat este <code>x</code> dupa o reducere  de  <code>y%</code>?"
+                }
+            },
+            "bussiness": {
+                "profitMargin": {
+                    "text": "Cat e adaosul comercial daca COGS = %{x} RON si Revenue = %{y} RON?",
+                    "description": "Cat e adaosul comercial daca COGS = <code>x</code>RON si Revenue = <code>y</code>RON?"
+                }
+            }
+        }
+    }
+}

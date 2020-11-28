@@ -1,4 +1,3 @@
-
 function getActiveEquations() {
   const ret = [];
 
@@ -46,7 +45,8 @@ function isCategory($elem) {
 function setupNewQuestion() {
   const opts = {
     min: parseInt($("#min").val()),
-    max: parseInt($("#max").val())
+    max: parseInt($("#max").val()),
+    polyglot: window.polyglot
   };
 
   const eqIdentifier = chooseOne(getActiveEquations()).split('.');
@@ -58,19 +58,42 @@ function setupNewQuestion() {
   $("#question").html(window.currentEq.question);
 }
 
-function initApp() {
-  setupNewQuestion();
+function initPolyglot(language) {
+  return new Promise((resolve, reject) => {
+
+    $.getJSON(`/i18n/${language}.json`)
+      .done((resources) => {
+
+        const polyglot = new Polyglot();
+        polyglot.extend(resources);
+
+        resolve(polyglot);
+      })
+      .fail((jqxhr, textStatus, error) => {
+
+        console.log(error);
+        reject();
+      });
+  })
+}
+
+async function initApp() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const lang = urlParams.get('lang') ? urlParams.get('lang') : "en";
+
+  window.polyglot = await initPolyglot(lang);
 
   $(".custom-control-input").change(handleSwitchChange);
 
-  $("#answer").keyup(function () {
+  $("#answer").keyup(() => {
     const answer = $("#answer").val();
     if (answer == "!" || answer == window.currentEq.answer) {
       $("#answer").val("");
       setupNewQuestion();
     }
   });
-  
+
   $("#get-excel-exercise-btn").click(() => {
     buildExcelExercise1();
   });
@@ -79,4 +102,16 @@ function initApp() {
     setupNewQuestion();
   });
 
+  $("#language-selector").val(lang);
+  $("#language-selector").change(async () => {
+    window.location = "index.html?lang=" + $("#language-selector").val();
+  });
+
+  $(() => {
+    $('.selectpicker').selectpicker('refresh');
+  });
+
+  generateOptions(equations, $("#options-table-body"), window.polyglot);
+
+  setupNewQuestion();
 }

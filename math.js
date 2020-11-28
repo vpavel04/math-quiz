@@ -169,7 +169,7 @@ const equations = {
       const int1 = chooseInt(0, maxNumber);
 
       return {
-        question: `Cat este ${int1 / 100} in procente?`,
+        question: opts.polyglot.t('quiz.math.percentages.convertNumberToPercentage.text', { x: int1 / 100 }),
         answer: int1 + "%"
       }
     },
@@ -179,7 +179,7 @@ const equations = {
       const int1 = chooseInt(0, maxNumber);
 
       return {
-        question: `Cat este ${int1}% in zecimal?`,
+        question: opts.polyglot.t('quiz.math.percentages.convertPercentageToNumber.text', { x: int1 }),
         answer: int1 / 100
       }
     },
@@ -188,14 +188,14 @@ const equations = {
       const percentages = [25];
       for (let i = 0; i <= 10; i++) {
         percentages.push(i);
-        percentages.push( i * 10);
+        percentages.push(i * 10);
       }
 
       const percentage = chooseOne(percentages);
       const int1 = chooseInt(opts.min, opts.max, true) * 100;
 
       return {
-        question: `Cat reprezinta ${int1 * percentage / 100} din ${int1} in procente?`,
+        question: opts.polyglot.t('quiz.math.percentages.equation1.text', { x: int1 * percentage / 100, y: int1 }),
         answer: percentage + "%"
       }
     },
@@ -226,7 +226,7 @@ const equations = {
       const int2 = chooseInt(opts.min, opts.max, true) * chooseOne([1, 10]);
 
       return {
-        question: `Cat este ${int1}% din ${int2}% ?`,
+        question: opts.polyglot.t('quiz.math.percentages.equation4.text', { x: int1, y: int2 }),
         answer: int1 * int2 / 100 + "%"
       }
     },
@@ -235,7 +235,7 @@ const equations = {
       const res = GenerateGrowth(opts);
 
       return {
-        question: `Cat e cresterea procentuala de la ${res.from} la ${res.to}?`,
+        question: opts.polyglot.t('quiz.math.percentages.equation5.text', { x: res.from, y: res.to }),
         answer: res.p + "%"
       }
     },
@@ -247,16 +247,16 @@ const equations = {
       const int3 = int1 * 100 / int2;
 
       return {
-        question: `Cat este ${int3} dupa o crestere de  ${int2 * multiplier}%?`,
+        question: opts.polyglot.t('quiz.math.percentages.equation6.text', { x: int3, y: int2 * multiplier }),
         answer: int3 + int3 * int2 * multiplier / 100
       }
     },
 
     equation7: (opts) => {
       const res = GenerateDecrease(opts);
-    
+
       return {
-        question: `Cat e reducerea % de la ${res.from} la ${res.to}?`,
+        question: opts.polyglot.t('quiz.math.percentages.equation7.text', { x: res.from, y: res.to }),
         answer: res.p + "%"
       }
     },
@@ -266,9 +266,9 @@ const equations = {
       const int2 = chooseOne(getDivisors(100));
       const multiplier = int2 < 20 ? chooseInt(1, 5) : 1;
       const int3 = int1 * 100 / int2;
-    
+
       return {
-        question: `Cat este ${int3} dupa o reducere  de  ${int2 * multiplier}% ?`,
+        question: opts.polyglot.t('quiz.math.percentages.equation8.text', { x: int3, y: int2 * multiplier }),
         answer: int3 - int3 * int2 * multiplier / 100
       }
     }
@@ -280,10 +280,10 @@ const equations = {
       const res = GenerateGrowth(opts);
 
       return {
-        
-        question: `Cat e adaosul comercial pentru un produs care are COGS-ul ${res.from} RON si pretul de vanzare ${res.to} RON?`,
+
+        question: opts.polyglot.t('quiz.math.bussiness.profitMargin.text', { x: res.from, y: res.to }),
         answer: res.p + "%"
       }
     }
-  },
+  }
 }
