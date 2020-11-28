@@ -84,6 +84,8 @@ async function initApp() {
 
   window.polyglot = await initPolyglot(lang);
 
+  generateOptions(equations, $("#options-table-body"), window.polyglot);
+  
   $(".custom-control-input").change(handleSwitchChange);
 
   $("#answer").keyup(() => {
@@ -110,8 +112,6 @@ async function initApp() {
   $(() => {
     $('.selectpicker').selectpicker('refresh');
   });
-
-  generateOptions(equations, $("#options-table-body"), window.polyglot);
 
   setupNewQuestion();
 }
