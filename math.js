@@ -227,7 +227,7 @@ const equations = {
 
       return {
         question: opts.polyglot.t('quiz.math.percentages.equation4.text', { x: int1, y: int2 }),
-        answer: int1 * int2 / 100 + "%"
+        answer: int1 * int2 / 100
       }
     },
 
