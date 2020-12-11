@@ -54,6 +54,7 @@ function setupNewQuestion() {
   const eq = eqCategory[eqIdentifier[1]];
 
   window.currentEq = eq(opts);
+  console.log(window.currentEq);
 
   $("#question").html(window.currentEq.question);
 }

@@ -69,6 +69,24 @@
                     "text": "What is the markup if the COGS-ul is %{x}$ and the revenue is %{y}%?",
                     "description": "What is the markup if the COGS-ul is <code>x$</code> and the revenue is <code>y$</code>?"
                 }
+            },
+            "units": {
+                "convertMass": {
+                    "text": "What is %{x} (%{fromUnit}) in (%{toUnit})?",
+                    "description": "Convert mass units"
+                },
+                "convertLength": {
+                    "text": "What is %{x} (%{fromUnit}) in (%{toUnit})?",
+                    "description": "Convert length units"
+                },
+                "convertArea": {
+                    "text": "What is %{x} (%{fromUnit}) in (%{toUnit})?",
+                    "description": "Convert area units"
+                },
+                "convertVolume": {
+                    "text": "What is %{x} (%{fromUnit}) in (%{toUnit})?",
+                    "description": "Convert volume units"
+                }
             }
         }
     }

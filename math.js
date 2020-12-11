@@ -2,12 +2,12 @@
 function chooseOne(arr) {
   let idx = Math.floor(Math.random() * arr.length);
   return arr[idx];
-}
+};
 
 function chooseInt(min, max, notZero = false) {
   const ret = Math.floor(Math.random() * (max - min + 1)) + min;
   return (notZero == true && ret == 0) ? 1 : ret;
-}
+};
 
 function getDivisors(number) {
   const divs = [];
@@ -19,7 +19,7 @@ function getDivisors(number) {
   divs.push(number);
 
   return divs;
-}
+};
 
 function GenerateGrowth(opts) {
   const int1 = chooseInt(opts.min, opts.max, true);
@@ -31,7 +31,7 @@ function GenerateGrowth(opts) {
     to: int3 + int3 * int2 * multiplier / 100,
     p: int2 * multiplier
   }
-}
+};
 
 function GenerateDecrease(opts) {
   const int1 = chooseInt(opts.min, opts.max, true);
@@ -43,7 +43,18 @@ function GenerateDecrease(opts) {
     to: int3 - int3 * int2 * multiplier / 100,
     p: int2 * multiplier
   }
-}
+};
+
+function DoUnitConversion(number, fromUnit, toUnit) {
+    const powerOfTen = fromUnit.scale - toUnit.scale;
+
+    let retVal = number * Math.pow(10, powerOfTen);
+    if(powerOfTen < 0) {
+      retVal = parseFloat(retVal.toFixed(Math.abs(powerOfTen)));
+    };
+
+    return retVal;
+};
 
 const equations = {
   basics: {
@@ -280,10 +291,87 @@ const equations = {
       const res = GenerateGrowth(opts);
 
       return {
-
         question: opts.polyglot.t('quiz.math.bussiness.profitMargin.text', { x: res.from, y: res.to }),
         answer: res.p + "%"
       }
     }
+  },
+  units: {
+    convertMass: (opts) => {
+      const scaleToKg = [ 
+        {name: "mg", scale: -3},
+        {name: "Kg", scale: 0},
+        {name: "T", scale: 3}
+      ];
+      const convertFrom = chooseOne(scaleToKg);
+      const convertTo = chooseOne(scaleToKg.filter( elem => elem.name != convertFrom.name));
+
+      const int1 = chooseInt(0, 100);
+      const val = chooseOne([1, 10]);
+      const number = int1 * val;
+
+      return {
+        question: opts.polyglot.t('quiz.math.units.convertMass.text', { x: number, fromUnit: convertFrom.name, toUnit: convertTo.name }),
+        answer: DoUnitConversion(number, convertFrom, convertTo)
+      };
+    },
+    convertLength: (opts) => {
+      const scaleToM = [ 
+        {name: "mm", scale: -3},
+        {name: "cm", scale: -2},
+        {name: "m", scale: 0},
+        {name: "km", scale: 3}
+      ];
+
+      const convertFrom = chooseOne(scaleToM);
+      const convertTo = chooseOne(scaleToM.filter( elem => elem.name != convertFrom.name));
+
+      const int1 = chooseInt(0, 100);
+      const val = chooseOne([1, 10]);
+      const number = int1 * val;
+
+      return {
+        question: opts.polyglot.t('quiz.math.units.convertLength.text', { x: number, fromUnit: convertFrom.name, toUnit: convertTo.name }),
+        answer: DoUnitConversion(number, convertFrom, convertTo)
+      };
+    },
+    convertArea: (opts) => {
+      const scaleToM = [ 
+        {name: "mm2", scale: -6},
+        {name: "cm2", scale: -4},
+        {name: "m2", scale: 0}
+      ];
+      const convertFrom = chooseOne(scaleToM);
+      const convertTo = chooseOne(scaleToM.filter( elem => elem.name != convertFrom.name));
+
+      const int1 = chooseInt(0, 100);
+      const val = chooseOne([1, 10]);
+      const number = int1 * val;
+
+      return {
+        question: opts.polyglot.t('quiz.math.units.convertArea.text', { x: number, fromUnit: convertFrom.name, toUnit: convertTo.name }),
+        answer: DoUnitConversion(number, convertFrom, convertTo)
+      };
+    },
+    convertVolume: (opts) => {
+      const scaleToM = [ 
+        {name: "mm3", scale: -9},
+        {name: "cm3", scale: -6},
+        {name: "ml", scale: -6},
+        {name: "l", scale: -3},
+        {name: "m3", scale: 0}
+      ];
+      const convertFrom = chooseOne(scaleToM);
+      const convertTo = chooseOne(scaleToM.filter( elem => elem.name != convertFrom.name));
+
+      const int1 = chooseInt(0, 100);
+      const val = chooseOne([1, 10]);
+      const number = int1 * val;
+      
+      return {
+        question: opts.polyglot.t('quiz.math.units.convertVolume.text', { x: number, fromUnit: convertFrom.name, toUnit: convertTo.name }),
+        answer: DoUnitConversion(number, convertFrom, convertTo)
+      };
+    },
   }
 }

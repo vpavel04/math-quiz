@@ -69,6 +69,24 @@
                     "text": "Cat este adaosul comercial daca COGS = %{x} RON si Revenue = %{y} RON?",
                     "description": "Cat este adaosul comercial daca COGS = <code>x</code>RON si Revenue = <code>y</code>RON?"
                 }
+            },
+            "units": {
+                "convertMass": {
+                    "text": "Cat este %{x} (%{fromUnit}) in (%{toUnit})?",
+                    "description": "Conversii intre unitati de greutate"
+                },
+                "convertLength": {
+                    "text": "Cat este %{x} (%{fromUnit}) in (%{toUnit})?",
+                    "description": "Conversii intre unitati de lungime"
+                },
+                "convertArea": {
+                    "text": "Cat este %{x} (%{fromUnit}) in (%{toUnit})?",
+                    "description": "Conversii intre unitati de arie"
+                },
+                "convertVolume": {
+                    "text": "Cat este %{x} (%{fromUnit}) in (%{toUnit})?",
+                    "description": "Conversii intre unitati de volum"
+                }
             }
         }
     }
