@@ -15,13 +15,13 @@
                     "description": "What is <code>x</code> / <code>y</code>?"
                 },
                 "treeNumbersEq":{
-                    "description": "What is <code>x</code> &#9633; <code>y</code> &#9633; <code>z</code>? Where &#9633; can be +, -, * sau /"
+                    "description": "What is <code>x</code> &#9633; <code>y</code> &#9633; <code>z</code>? Where &#9633; can be +, -, * or /"
                 },
                 "fourNumbersEq":{
-                    "description": "What is <code>x</code> &#9633; <code>y</code> &#9633; <code>z</code> &#9633; <code>w</code>? Where &#9633; can be +, -, * sau /"
+                    "description": "What is <code>x</code> &#9633; <code>y</code> &#9633; <code>z</code> &#9633; <code>w</code>? Where &#9633; can be +, -, * or /"
                 },
                 "multiplyOrDivideByTen":{
-                    "description": "Multyply or divide by 10, 100 sau 1000"
+                    "description": "Multyply or divide by 10, 100 or 1000"
                 }
             },
             "percentages": {
@@ -67,7 +67,7 @@
             "bussiness": {
                 "profitMargin": {
                     "text": "What is the markup if the COGS-ul is %{x}$ and the revenue is %{y}%?",
-                    "description": "What is the markup if the COGS-ul is <code>x$</code> and the revenue is <code>y$</code>?"
+                    "description": "What is the markup if the COGS is <code>x$</code> and the revenue is <code>y$</code>?"
                 }
             },
             "units": {
