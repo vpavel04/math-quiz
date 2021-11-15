@@ -66,8 +66,8 @@
             },
             "bussiness": {
                 "profitMargin": {
-                    "text": "What is the markup if the COGS-ul is %{x}$ and the revenue is %{y}%?",
-                    "description": "What is the markup if the COGS is <code>x$</code> and the revenue is <code>y$</code>?"
+                    "text": "What is the markup if COGS is %{x}$ and the revenue is %{y}%?",
+                    "description": "What is the markup if COGS is <code>x$</code> and the revenue is <code>y$</code>?"
                 }
             },
             "units": {
