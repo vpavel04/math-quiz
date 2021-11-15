@@ -97,10 +97,6 @@ async function initApp() {
     }
   });
 
-  $("#get-excel-exercise-btn").click(() => {
-    buildExcelExercise1();
-  });
-
   $("#next-question-btn").click(() => {
     setupNewQuestion();
   });
